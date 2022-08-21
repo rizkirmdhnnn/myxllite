@@ -1,15 +1,18 @@
 # My XL Lite
 
-Tool buat cek paket xl lebih lengkap, bisa liat fup paket unlimited.
+Tool buat cek paket XL lebih lengkap, bisa liat fup paket unlimited.
 
 ## Installation
 
-- cara install, paste diterminal:
+- Pastikan koneksi internet tersedia, untuk meminimalisir kegagalan
+- Buka Terminal/TTYD/Putty, salin script dibawah ini
 
-```sh
-wget https://raw.githubusercontent.com/rizpedia/myxllite/master/installer.sh && chmod +x ./installer.sh && ./installer.sh
-```
+	```
+	wget https://raw.githubusercontent.com/rizpedia/myxllite/master/installer.sh && chmod +x ./installer.sh && ./installer.sh
+	```
 
-- Untuk akses bisa ke: http://ip-router/myxllite atau dimenu luci jg ada
+- Untuk akses bisa ke http://ip-router/myxllite atau dimenu luci jg ada
+
 ## Credits
-- https://github.com/ardcsx terimakasih atas apinya
+
+- https://github.com/ardcsx terimakasih atas APInya
