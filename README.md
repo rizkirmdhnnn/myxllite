@@ -4,7 +4,7 @@ Tool buat cek paket xl lebih lengkap, bisa liat fup paket unlimited.
 
 ## Installation
 
-- cara install:
+- cara install, paste diterminal:
 
 ```sh
 wget https://raw.githubusercontent.com/rizpedia/myxllite/master/installer.sh && chmod +x ./installer.sh && ./installer.sh
