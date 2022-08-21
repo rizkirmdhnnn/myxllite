@@ -11,3 +11,5 @@ wget https://raw.githubusercontent.com/rizpedia/myxllite/master/installer.sh && 
 ```
 
 - Untuk akses bisa ke: http://ip-router/myxllite atau dimenu luci jg ada
+## Credits
+- https://github.com/ardcsx terimakasih atas apinya
