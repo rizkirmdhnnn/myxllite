@@ -7,7 +7,7 @@ async function getData() {
 
   if (!resultApi.data) {
     alert(
-      "Kena limit cek maseh, nunggu nanti lagi. kalo masih sama cek ulang nomernya"
+      "Ada yg eror. cek ulang nomer, jika nomer tidak ada yang salah berarti kena limit api"
     );
   } else {
     var cardNumber = "0";
@@ -118,7 +118,7 @@ async function getData() {
           cardNumberMap++;
         });
       } else {
-        console.log(packageItem[0].packages.message);
+        alert(packageItem[0].packages.message);
       }
       cardNumber++;
     }

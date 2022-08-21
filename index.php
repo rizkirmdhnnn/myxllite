@@ -19,7 +19,7 @@
       <div class="container-sm sticky-top">
         <nav class="navbar sticky-top navbar-expand-lg bg-light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Cek Kuota XL</a>
+            <a class="navbar-brand" href="#">MY XL Lite</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -56,7 +56,7 @@
                         >
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#about">Tentang</a>
                       </li>
                     </ul>
                   </li>
@@ -135,6 +135,22 @@
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Modal About-->
+      <div class="modal fade " id="about" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            
+            <div class="modal-body">
+              ada eror atau request apa bisa ke telegram @rizkirmdhnnnnnn
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
           </div>
         </div>
       </div>
