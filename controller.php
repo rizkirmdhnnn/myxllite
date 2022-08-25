@@ -14,6 +14,7 @@
             $data = file_get_contents("./assets/data/nomer.json");
             $array = json_decode($data, true);
             $array['daftar'][] = $tambahnomer;
+            $array['aktif'] = $tambahnomer;
             file_put_contents('./assets/data/nomer.json', json_encode($array));
             header('Location: index.html');
             exit();
@@ -37,6 +38,15 @@
                 header('Location: index.html');
                 exit();
             }
+        }
+        if(isset($_POST['editnomer'])){
+            $editnomer = $_POST['editnomer'];
+            $data = file_get_contents("./assets/data/nomer.json");
+            $array = json_decode($data, true);
+            $array['daftar'][] = $editnomer;
+            file_put_contents('./assets/data/nomer.json', json_encode($array));
+            header('Location: index.html');
+            exit();
         }
         
 }
