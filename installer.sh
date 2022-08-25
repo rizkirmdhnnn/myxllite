@@ -13,8 +13,6 @@ pkgname="git-http"
 if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
 pkgname="php7"
 if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
-pkgname="php7-mod-curl"
-if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
 
 cd /www
 git clone https://github.com/rizpedia/myxllite
