@@ -6,7 +6,7 @@
 }
 .paralax {
   position: fixed;
-  background-image: url(./assets/img/background.png);
+  background-image: url(assets/img/background.png);
   width: 100%;
   height: 100%;
   z-index: 0;
