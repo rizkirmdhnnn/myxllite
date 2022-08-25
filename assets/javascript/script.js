@@ -76,9 +76,9 @@ async function getData() {
     inputGroup.appendChild(formHps);
     formHps.appendChild(dropdownMenu);
     dropdownMenu.appendChild(li);
-    li.appendChild(dropdownEdit);
-    dropdownMenu.appendChild(li);
-    li.appendChild(dropdownDivider);
+    // li.appendChild(dropdownEdit);
+    // dropdownMenu.appendChild(li);
+    // li.appendChild(dropdownDivider);
     dropdownMenu.appendChild(li);
     li.appendChild(dropdownHapus);
 

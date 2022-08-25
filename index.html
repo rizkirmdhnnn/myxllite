@@ -169,7 +169,7 @@
       </div>
 
       <!-- MODAL EDIT NOMER -->
-      <div
+      <!-- <div
         class="modal fade"
         id="modaleditnomer"
         data-bs-backdrop="static"
@@ -184,34 +184,31 @@
               <h5 class="modal-title" id="staticBackdropLabel">Edit Nomer</h5>
             </div>
             <div class="modal-body">
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-              />
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-toggle="modal"
-                data-bs-target="#daftarnomer"
-              >
-                Batal
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#daftarnomer"
-              >
-                Ganti
-              </button>
+              <form action="controller.php" method="post">
+                <div class="modal-body">
+                  <input
+                    type="text"
+                    aria-label="First name"
+                    class="form-control"
+                    name="editnomer"
+                  />
+                  
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Batal
+                  </button>
+                  <button class="btn btn-primary" type="submit">Edit Nomer</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- MODAL TAMBAH NOMER -->
       <div
