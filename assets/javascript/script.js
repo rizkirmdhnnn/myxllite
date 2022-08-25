@@ -17,7 +17,7 @@ async function getData() {
     cardModal.classList.add("card");
     const form = document.createElement("form");
     form.setAttribute("method", "post");
-    form.setAttribute("action", "./setNomer.php");
+    form.setAttribute("action", "./controller.php");
     const inputGroup = document.createElement("div");
     inputGroup.classList.add("input-group");
     const cardBody = document.createElement("button");
@@ -47,7 +47,7 @@ async function getData() {
     spanVisuallyHidden.classList.add("visually-hidden");
     const formHps = document.createElement("form");
     formHps.setAttribute("method", "post");
-    formHps.setAttribute("action", "./hapusNomer.php");
+    formHps.setAttribute("action", "./controller.php");
     const dropdownMenu = document.createElement("ul");
     dropdownMenu.classList.add("dropdown-menu");
     const li = document.createElement("li");
@@ -316,19 +316,4 @@ async function getData() {
   // const loading = document.getElementById("spinner-loading");
   // loading.remove();
 }
-
-async function setNomer() {
-  dataMentah = {
-    aktif: "081994634767",
-    daftar: ["087732625718", "081994634767"],
-  };
-
-  await fetch("./setNomer.php", {
-    method: "POST",
-    body: { jsonString: JSON.stringify(dataMentah) },
-  }).then((res) => {
-    console.log("Request complete! response:", res);
-  });
-}
-
 getData();
