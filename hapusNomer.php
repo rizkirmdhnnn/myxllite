@@ -8,16 +8,13 @@
         if( $lenghtArrayData = 1){
             array_splice($arraydaftar, $datarespon, 1); 
             $array['daftar'] = $arraydaftar;
-            var_dump($arraydaftar);
             file_put_contents('./assets/data/nomer.json', json_encode($array));
         } else {
             array_splice($arraydaftar, $datarespon, $datarespon); 
             $array['daftar'] = $arraydaftar;
-            var_dump($arraydaftar);
             file_put_contents('./assets/data/nomer.json', json_encode($array));
         }
-        header('Location: index.html');
-        exit();
-
 }
+header('Location: index.html');
+exit();
 ?>
