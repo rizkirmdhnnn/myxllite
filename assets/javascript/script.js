@@ -4,13 +4,10 @@ async function getData() {
     .then((response) => response.json())
     .then((json) => (dataMentah = json))
     .catch((err) => console.log("Request Failed", err));
-  await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif)
-    .then((response) => response.json())
-    .then((json) => (resultApi = json))
-    .catch((err) => console.log("Request Failed", err));
-  console.log(resultApi);
+
 
   var nomerKe = "0";
+
   for (dataMentahh of dataMentah.daftar) {
     // CREATE ELEMENT DAFTAR NOMER
     const cardModal = document.createElement("div");
@@ -90,6 +87,16 @@ async function getData() {
     dropdownHapus.setAttribute("value", nomerKe);
     nomerKe++;
   }
+
+  if(!dataMentah.aktif){
+    alert("Nomernya belum ada maseh, add dulu")
+    return;
+  }
+  await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif)
+    .then((response) => response.json())
+    .then((json) => (resultApi = json))
+    .catch((err) => console.log("Request Failed", err));
+  console.log(resultApi);
 
   if (!resultApi.data) {
     alert(
