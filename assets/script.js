@@ -1,6 +1,6 @@
 async function getData() {
   let resultApi = "0";
-  await fetch("getData.php")
+  await fetch("https://apix.ardcs.my.id/cekxl?no=085956371889")
     .then((response) => response.json())
     .then((json) => (resultApi = json))
     .catch((err) => console.log("Request Failed", err));
