@@ -1,10 +1,17 @@
+const headers = new Headers();
+headers.append("pragma", "no-cache");
+headers.append("cache-control", "no-cache");
+
+const myInit = {
+  method: "GET",
+  headers,
+};
 async function getData() {
   let resultApi = "0";
-  await fetch("./assets/data/nomer.json")
+  await fetch("./assets/data/nomer.json", myInit)
     .then((response) => response.json())
     .then((json) => (dataMentah = json))
     .catch((err) => console.log("Request Failed", err));
-
 
   var nomerKe = "0";
 
@@ -88,8 +95,8 @@ async function getData() {
     nomerKe++;
   }
 
-  if(!dataMentah.aktif){
-    alert("Nomernya belum ada maseh, add dulu")
+  if (!dataMentah.aktif) {
+    alert("Nomernya belum ada maseh, add dulu");
     return;
   }
   await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif)
