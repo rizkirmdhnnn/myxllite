@@ -95,7 +95,6 @@ async function getData() {
 
   if (!dataMentah.aktif) {
     $(document).ready(function () {
-      // Show the Modal on load
       $("#modalwelcome").modal("show");
     });
     // or
@@ -105,12 +104,10 @@ async function getData() {
     .then((response) => response.json())
     .then((json) => (resultApi = json))
     .catch((err) => console.log("Request Failed", err));
-  console.log(resultApi);
 
   if (resultApi.status == false) {
     document.getElementById("erormsg").innerText = resultApi.result.errorMessage ;
     $(document).ready(function () {
-      // Show the Modal on load
       $("#modaleror").modal("show");
     });
   } else {
@@ -198,7 +195,6 @@ async function getData() {
               100;
             const num = persenBar;
             const first2Str = String(num).slice(0, 2);
-            console.log(first2Str);
 
             // DISPLAY PERSEN DATA
             if (persenBar > 100) {
@@ -298,7 +294,6 @@ async function getData() {
               100;
             const num = persenBar;
             const first2Str = String(num).slice(0, 2);
-            console.log(first2Str);
 
             // DISPLAY PERSEN DATA
             if (persenBar > 100) {
@@ -327,7 +322,6 @@ async function getData() {
       } else {
         document.getElementById("erormsg").innerText = packageItem[0].packages.message + "\n\n Update terakhir:  " + resultApi.data.lastUpdate
         $(document).ready(function () {
-          // Show the Modal on load
           $("#modaleror").modal("show");
         });
       }
