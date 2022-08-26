@@ -12,6 +12,9 @@ async function getData() {
     .then((json) => (dataMentah = json))
     .catch((err) => console.log("Request Failed", err));
 
+  $(document).ready(function () {
+    $("#modalloader").modal("show");
+  });
   var nomerKe = "0";
   for (dataMentahh of dataMentah.daftar) {
     // CREATE ELEMENT DAFTAR NOMER
@@ -95,6 +98,11 @@ async function getData() {
 
   if (!dataMentah.aktif) {
     $(document).ready(function () {
+      $("#modalloader").modal("hide");
+    });
+    const loading = document.getElementById("modalloader");
+    loading.remove();
+    $(document).ready(function () {
       $("#modalwelcome").modal("show");
     });
     // or
@@ -106,10 +114,23 @@ async function getData() {
     .catch((err) => console.log("Request Failed", err));
 
   if (resultApi.status == false) {
-    document.getElementById("erormsg").innerText = resultApi.result.errorMessage ;
     $(document).ready(function () {
-      $("#modaleror").modal("show");
+      $("#modalloader").modal("hide");
     });
+    if(!resultApi.description){
+      document.getElementById("erormsg").innerText =
+        resultApi.result.errorMessage;
+      $(document).ready(function () {
+        $("#modaleror").modal("show");
+      });
+    } else {
+      document.getElementById("erormsg").innerText =
+        resultApi.description;
+      $(document).ready(function () {
+        $("#modaleror").modal("show");
+      });
+    }
+    
   } else {
     var cardNumber = "0";
     var cardNumberMap = "0";
@@ -319,7 +340,13 @@ async function getData() {
         }
         //
       } else {
-        document.getElementById("erormsg").innerText = packageItem[0].packages.message + "\n\n Update terakhir:  " + resultApi.data.lastUpdate
+        $(document).ready(function () {
+          $("#modalloader").modal("hide");
+        });
+        document.getElementById("erormsg").innerText =
+          packageItem[0].packages.message +
+          "\n\n Update terakhir:  " +
+          resultApi.data.lastUpdate;
         $(document).ready(function () {
           $("#modaleror").modal("show");
         });
@@ -327,8 +354,8 @@ async function getData() {
       cardNumber++;
     }
   }
-
-  // const loading = document.getElementById("spinner-loading");
-  // loading.remove();
+  $(document).ready(function () {
+    $("#modalloader").modal("hide");
+  });
 }
 getData();

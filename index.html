@@ -228,7 +228,7 @@
               <form action="controller.php" method="post">
                 <div class="modal-body">
                   <input
-                    type="text"
+                    type="number"
                     aria-label="First name"
                     class="form-control"
                     name="tambahnomer"
@@ -364,7 +364,29 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <!-- MODAL LOADER -->
+      <div
+      class="modal fade"
+      id="modalloader"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modaleror"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border m-5" style="width: 3.5rem; height: 3.5rem;"  role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
     <script src="assets/javascript/bootstrap.bundle.min.js"></script>
     <script src="assets/javascript/script.js"></script>
