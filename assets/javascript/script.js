@@ -1,7 +1,6 @@
 const headers = new Headers();
 headers.append("pragma", "no-cache");
 headers.append("cache-control", "no-cache");
-
 const myInit = {
   method: "GET",
   headers,
@@ -14,7 +13,6 @@ async function getData() {
     .catch((err) => console.log("Request Failed", err));
 
   var nomerKe = "0";
-
   for (dataMentahh of dataMentah.daftar) {
     // CREATE ELEMENT DAFTAR NOMER
     const cardModal = document.createElement("div");
@@ -99,7 +97,7 @@ async function getData() {
     alert("Nomernya belum ada maseh, add dulu");
     return;
   }
-  await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif)
+  await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif, myInit)
     .then((response) => response.json())
     .then((json) => (resultApi = json))
     .catch((err) => console.log("Request Failed", err));
