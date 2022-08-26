@@ -19,7 +19,7 @@ My XL Lite merupakan tool sederhana yang berguna untuk melihat informasi kuota X
 - Buka Terminal/TTYD/Putty, salin script dibawah ini
 
 	```
-	chmod +x /www/myxllite/uninstaller.sh && ./www/myxllite/uninstaller.sh
+	chmod +x /www/myxllite/uninstaller.sh && /www/myxllite/uninstaller.sh
 	```
 ## Update
 
