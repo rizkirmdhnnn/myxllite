@@ -1,6 +1,6 @@
 # My XL Lite
 
-My XL Lite merupakan tool sederhana unutuk mengecek kuota XL dengan lebih lengkap. Dengan tool ini anda bisa melihat dengan jelas FUP dari paket unlimited.
+My XL Lite merupakan tool sederhana yang berguna untuk melihat informasi kuota XL dengan lebih lengkap. Dengan tool ini anda bisa melihat dengan jelas FUP dari paket unlimited.
 
 ## Installation
 
@@ -21,6 +21,9 @@ My XL Lite merupakan tool sederhana unutuk mengecek kuota XL dengan lebih lengka
 	```
 	chmod +x /www/myxllite/uninstaller.sh && ./www/myxllite/uninstaller.sh
 	```
+## Update
+
+- Untuk update anda harus uninstall dan kemudian menginstall ulang tool
 
 ## Credits
 
