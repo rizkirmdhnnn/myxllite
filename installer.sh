@@ -1,7 +1,7 @@
 #!/bin/sh
 # Based codes by Teguh Santoso
 # Improved by Helmi Amirudin <helmiau.com>
-
+clear
 opkg update
 pkgname="bash"
 if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
@@ -23,4 +23,5 @@ chmod +x /usr/lib/lua/luci/controller/myxllite.lua
 chmod +x /usr/lib/lua/luci/view/myxllite.htm
 [ -d /tmp/luci-modulecache ] && rm -rf /tmp/luci-modulecache
 [ -e /tmp/luci-indexcache ] && rm -f /tmp/luci-indexcache
-echo "Terinstall, monggoh cek di luci. Jangan lupa setting nomer dulu "
+clear
+echo "Sukses terinstall, silahkan akses lewat luci atau lewat http://ip-router/myxllite"

@@ -1,6 +1,6 @@
 # My XL Lite
 
-Tool buat cek paket XL lebih lengkap, bisa liat fup paket unlimited.
+My XL Lite merupakan tool sederhana unutuk mengecek kuota XL dengan lebih lengkap. Dengan tool ini anda bisa melihat dengan jelas FUP dari paket unlimited.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Tool buat cek paket XL lebih lengkap, bisa liat fup paket unlimited.
 	wget https://raw.githubusercontent.com/rizpedia/myxllite/master/installer.sh && chmod +x ./installer.sh && ./installer.sh
 	```
 
-- Untuk akses bisa ke http://ip-router/myxllite atau dimenu luci jg ada
+- Untuk akses bisa ke http://ip-router/myxllite atau dimenu luci
 
 ## Uninstallation
 
