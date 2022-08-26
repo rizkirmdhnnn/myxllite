@@ -94,7 +94,7 @@ async function getData() {
   }
 
   if (!dataMentah.aktif) {
-    $(document).ready(function(){
+    $(document).ready(function () {
       // Show the Modal on load
       $("#modalwelcome").modal("show");
     });
@@ -107,10 +107,12 @@ async function getData() {
     .catch((err) => console.log("Request Failed", err));
   console.log(resultApi);
 
-  if (!resultApi.data) {
-    alert(
-      "Ada yg eror. cek ulang nomer, jika nomer tidak ada yang salah berarti kena limit api"
-    );
+  if (resultApi.status == false) {
+    document.getElementById("erormsg").innerText = resultApi.result.errorMessage ;
+    $(document).ready(function () {
+      // Show the Modal on load
+      $("#modaleror").modal("show");
+    });
   } else {
     var cardNumber = "0";
     var cardNumberMap = "0";
@@ -323,7 +325,11 @@ async function getData() {
         }
         //
       } else {
-        alert(packageItem[0].packages.message);
+        document.getElementById("erormsg").innerText = packageItem[0].packages.message + "\n\n Update terakhir:  " + resultApi.data.lastUpdate
+        $(document).ready(function () {
+          // Show the Modal on load
+          $("#modaleror").modal("show");
+        });
       }
       cardNumber++;
     }
