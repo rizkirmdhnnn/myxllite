@@ -94,7 +94,11 @@ async function getData() {
   }
 
   if (!dataMentah.aktif) {
-    alert("Nomernya belum ada maseh, add dulu");
+    $(document).ready(function(){
+      // Show the Modal on load
+      $("#modalwelcome").modal("show");
+    });
+    // or
     return;
   }
   await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif, myInit)
