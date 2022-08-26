@@ -6,7 +6,6 @@
 }
 .paralax {
   position: fixed;
-  background-image: url(assets/img/background.png);
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -63,10 +62,10 @@
 @media only screen and (max-width: 600px) {
   .main {
     display: block;
-    padding: 0px 15px;
+    padding: 0px 0px;
   }
   .navbar {
-    padding: 15px 20px;
+    padding: 10px 5px;
   }
   .side-left,
   .side-right {
