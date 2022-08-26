@@ -49,6 +49,8 @@
   color: white;
 }
 
+
+
 /* RESPONSIVE BREAKPOINT*/
 @media only screen and (min-width: 600px) {
   .main {
