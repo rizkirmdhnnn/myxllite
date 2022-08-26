@@ -195,7 +195,6 @@ async function getData() {
               100;
             const num = persenBar;
             const first2Str = String(num).slice(0, 2);
-
             // DISPLAY PERSEN DATA
             if (persenBar > 100) {
               let persenNumber = "width : " + first2Str + "%";
