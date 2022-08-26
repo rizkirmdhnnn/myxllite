@@ -1,7 +1,6 @@
 const headers = new Headers();
 headers.append("pragma", "no-cache");
 headers.append("cache-control", "no-cache");
-
 const myInit = {
   method: "GET",
   headers,
@@ -14,7 +13,6 @@ async function getData() {
     .catch((err) => console.log("Request Failed", err));
 
   var nomerKe = "0";
-
   for (dataMentahh of dataMentah.daftar) {
     // CREATE ELEMENT DAFTAR NOMER
     const cardModal = document.createElement("div");
@@ -96,19 +94,22 @@ async function getData() {
   }
 
   if (!dataMentah.aktif) {
-    alert("Nomernya belum ada maseh, add dulu");
+    $(document).ready(function () {
+      $("#modalwelcome").modal("show");
+    });
+    // or
     return;
   }
-  await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif)
+  await fetch("https://apix.ardcs.my.id/cekxl?no=" + dataMentah.aktif, myInit)
     .then((response) => response.json())
     .then((json) => (resultApi = json))
     .catch((err) => console.log("Request Failed", err));
-  console.log(resultApi);
 
-  if (!resultApi.data) {
-    alert(
-      "Ada yg eror. cek ulang nomer, jika nomer tidak ada yang salah berarti kena limit api"
-    );
+  if (resultApi.status == false) {
+    document.getElementById("erormsg").innerText = resultApi.result.errorMessage ;
+    $(document).ready(function () {
+      $("#modaleror").modal("show");
+    });
   } else {
     var cardNumber = "0";
     var cardNumberMap = "0";
@@ -194,8 +195,6 @@ async function getData() {
               100;
             const num = persenBar;
             const first2Str = String(num).slice(0, 2);
-            console.log(first2Str);
-
             // DISPLAY PERSEN DATA
             if (persenBar > 100) {
               let persenNumber = "width : " + first2Str + "%";
@@ -294,7 +293,6 @@ async function getData() {
               100;
             const num = persenBar;
             const first2Str = String(num).slice(0, 2);
-            console.log(first2Str);
 
             // DISPLAY PERSEN DATA
             if (persenBar > 100) {
@@ -321,7 +319,10 @@ async function getData() {
         }
         //
       } else {
-        alert(packageItem[0].packages.message);
+        document.getElementById("erormsg").innerText = packageItem[0].packages.message + "\n\n Update terakhir:  " + resultApi.data.lastUpdate
+        $(document).ready(function () {
+          $("#modaleror").modal("show");
+        });
       }
       cardNumber++;
     }
