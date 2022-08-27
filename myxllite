@@ -1,0 +1,59 @@
+#!/bin/sh
+# Based codes by @rizpedia
+# Improved by Helmi Amirudin <helmiau.com>
+
+if [[ $1 == "in" ]]; then
+	opkg update
+	pkgname="bash"
+	if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
+	pkgname="curl"
+	if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
+	pkgname="git"
+	if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
+	pkgname="git-http"
+	if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
+	pkgname="php7"
+	if [[ $(opkg list-installed | grep -c "^$pkgname") == "0" ]]; then echo -e "Installing [$pkgname]..." && opkg install $pkgname ; fi
+
+	#install update
+	if [ -d /www/myxllite ]; then
+		echo -e "Old files detected! removing..."
+		rm -rf /www/myxllite
+		rm -f /usr/lib/lua/luci/controller/myxllite.lua
+		rm -f /usr/lib/lua/luci/view/myxllite.htm
+	fi
+
+	cd /www
+	git clone https://github.com/rizpedia/myxllite
+	cd myxllite
+	mv luci/controller/myxllite.lua /usr/lib/lua/luci/controller/myxllite.lua
+	mv luci/view/myxllite.htm /usr/lib/lua/luci/view/myxllite.htm
+	chmod +x /usr/lib/lua/luci/controller/myxllite.lua
+	chmod +x /usr/lib/lua/luci/view/myxllite.htm
+
+	ipowrt=$(uci show network | grep network.lan.ipaddr | cut -d \' -f2)
+	echo -e "Sukses terinstall, silahkan akses lewat luci atau lewat http://${ipowrt}/myxllite"
+elif [[ $1 == "un" ]]; then
+	if [ -d /www/myxllite ]; then
+		echo -e "Old files detected! removing..."
+		rm -rf /www/myxllite
+		rm -f /usr/lib/lua/luci/controller/myxllite.lua
+		rm -f /usr/lib/lua/luci/view/myxllite.htm
+		echo -e "File myXL Lite sudah dibersihkan, silahkan anu!"
+	fi
+elif [[ $1 == "ipk" ]]; then
+	wget --no-check-certificate https://raw.githubusercontent.com/helmiau/helmiwrt-packages/main/hpipk -O /bin/hpipk
+	chmod 755 /bin/hpipk
+	/bin/hpipk $(hpipk | grep myxllite) --force-depends
+elif [[ $1 == "unipk" ]]; then
+	opkg remove luci-app-myxllite
+else
+	echo -e "Cara pakai:"
+	echo -e "  myxllite in    : Install/Update myXL Lite via Bash Script"
+	echo -e "  myxllite un    : Remove/Uninstall myXL Lite via Bash Script"
+	echo -e "  myxllite ipk   : Install/Update IPK myXL Lite"
+	echo -e "  myxllite unipk : Remove/Uninstall IPK myXL Lite"
+fi
+
+[ -d /tmp/luci-modulecache ] && rm -rf /tmp/luci-modulecache
+[ -e /tmp/luci-indexcache ] && rm -f /tmp/luci-indexcache
