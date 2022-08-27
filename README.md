@@ -1,49 +1,54 @@
-# My XL Lite
+## My XL Lite
 
 My XL Lite merupakan tool sederhana yang berguna untuk melihat informasi kuota XL dengan lebih lengkap. Dengan tool ini anda bisa melihat dengan jelas FUP dari paket unlimited.
 
-## Install via Bash Script
+---
+
+### Initial Script
 
 - Pastikan koneksi internet tersedia, untuk meminimalisir kegagalan
-- Buka Terminal/TTYD/Putty, salin script dibawah ini
+- Buka Terminal/TTYD/Putty, salin script dibawah ini untuk **``mengunduh All-in-One script myXL Lite``**
 
 	```
-	wget https://raw.githubusercontent.com/rizpedia/myxllite/master/installer.sh && chmod +x ./installer.sh && ./installer.sh
+	wget https://raw.githubusercontent.com/rizpedia/myxllite/master/myxllite -O /bin/myxllite && chmod +x /bin/myxllite
 	```
 
-- Untuk akses bisa ke http://ip-router/myxllite atau dimenu luci
+---
 
-## Uninstallation via Bash Script
+### Installation
 
-- Pastikan koneksi internet tersedia, untuk meminimalisir kegagalan
-- Buka Terminal/TTYD/Putty, salin script dibawah ini
+- Pastikan [Initial Script](#Initial-Script) sudah terpasang
+- Pilih salah satu dari kedua cara install dibawah ini:
 
-	```
-	chmod +x /www/myxllite/uninstaller.sh && /www/myxllite/uninstaller.sh
-	```
-## Update
-
-- Untuk update anda harus uninstall dan kemudian menginstall ulang tool
-
------
-
-## Install IPK via HelmiWrt Packages (mudah)
-
-- Pastikan koneksi internet tersedia, untuk meminimalisir kegagalan
-- Buka Terminal/TTYD/Putty, salin script dibawah ini
+- Opsi 1: Jalankan perintah dibawah ini untuk **``memasang myXL Lite melalui Bash Script``**
 
 	```
-	wget --no-check-certificate https://raw.githubusercontent.com/helmiau/helmiwrt-packages/main/hpipk -O /bin/hpipk && chmod 755 /bin/hpipk && hpipk $(hpipk | grep myxllite) --force-depends
+	myxllite in
 	```
 
-- Logout lalu login LuCI.
 
-## Uninstall IPK
-
-- Buka Terminal/TTYD/Putty, salin script dibawah ini
+	Kamu juga bisa memasang myXL Lite dengan metode ke-2 ini
+- Opsi 1: Jalankan perintah dibawah ini untuk **``memasang IPK myXL Lite``**
 
 	```
-	opkg remove luci-app-myxllite
+	myxllite ipk
+	```
+
+---
+
+### Uninstall
+
+- Pastikan [Initial Script](#Initial-Script) sudah terpasang
+- Jika kamu **``memasang myXL Lite melalui Bash Script``**, jalankan perintah dibawah ini untuk **``menghapus myXL Lite melalui Bash Script``**
+
+	```
+	myxllite un
+	```
+
+- Jika kamu **``memasang IPK myXL Lite``**, jalankan perintah dibawah ini untuk **``meng-uninstall IPK myXL Lite``**
+
+	```
+	myxllite unipk
 	```
 
 ## Credits
