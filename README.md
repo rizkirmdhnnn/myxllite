@@ -2,7 +2,7 @@
 
 My XL Lite merupakan tool sederhana yang berguna untuk melihat informasi kuota XL dengan lebih lengkap. Dengan tool ini anda bisa melihat dengan jelas FUP dari paket unlimited.
 
-## Installation
+## Install via Bash Script
 
 - Pastikan koneksi internet tersedia, untuk meminimalisir kegagalan
 - Buka Terminal/TTYD/Putty, salin script dibawah ini
@@ -13,7 +13,7 @@ My XL Lite merupakan tool sederhana yang berguna untuk melihat informasi kuota X
 
 - Untuk akses bisa ke http://ip-router/myxllite atau dimenu luci
 
-## Uninstallation
+## Uninstallation via Bash Script
 
 - Pastikan koneksi internet tersedia, untuk meminimalisir kegagalan
 - Buka Terminal/TTYD/Putty, salin script dibawah ini
@@ -25,6 +25,28 @@ My XL Lite merupakan tool sederhana yang berguna untuk melihat informasi kuota X
 
 - Untuk update anda harus uninstall dan kemudian menginstall ulang tool
 
-## Credits
+-----
 
-- https://github.com/ardcsx terimakasih atas APInya
+## Install IPK via HelmiWrt Packages (mudah)
+
+- Pastikan koneksi internet tersedia, untuk meminimalisir kegagalan
+- Buka Terminal/TTYD/Putty, salin script dibawah ini
+
+	```
+	wget --no-check-certificate https://raw.githubusercontent.com/helmiau/helmiwrt-packages/main/hpipk -O /bin/hpipk && chmod 755 /bin/hpipk && hpipk $(hpipk | grep myxllite) --force-depends
+	```
+
+- Logout lalu login LuCI.
+
+## Uninstall IPK
+
+- Buka Terminal/TTYD/Putty, salin script dibawah ini
+
+	```
+	opkg remove luci-app-myxllite
+	```
+
+## Credits
+- [Rizki Ramadhan](https://github.com/rizpedia) as creator of this software.
+- [ardcsx](https://github.com/ardcsx) thanks for API.
+- [Helmi Amirudin](https://helmiau.com) as installer and uninstaller script and IPK compiler.
