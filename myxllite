@@ -35,11 +35,20 @@ if [[ $1 == "in" ]]; then
 	echo -e "Sukses terinstall, silahkan akses lewat luci atau lewat http://${ipowrt}/myxllite"
 elif [[ $1 == "un" ]]; then
 	if [ -d /www/myxllite ]; then
-		echo -e "Old files detected! removing..."
-		rm -rf /www/myxllite
-		rm -f /usr/lib/lua/luci/controller/myxllite.lua
-		rm -f /usr/lib/lua/luci/view/myxllite.htm
-		echo -e "File myXL Lite sudah dibersihkan, silahkan anu!"
+		echo -e "File myXL Lite terdeteksi...!!!"
+		xilix="/tmp/uninstall_myxllite.sh"
+cat << "EOF" > "$xilix"
+#!/bin/bash
+rm -rf /www/myxllite
+rm -f /usr/lib/lua/luci/controller/myxllite.lua
+rm -f /usr/lib/lua/luci/view/myxllite.htm
+[ -d /tmp/luci-modulecache ] && rm -rf /tmp/luci-modulecache
+[ -e /tmp/luci-indexcache ] && rm -f /tmp/luci-indexcache
+echo "Uninstall berhasil, semoga harimu menyenangkan:)"
+EOF
+		sed -i 's/\r$//' "$xilix"
+		chmod +x "$xilix"
+		bash "$xilix"
 	fi
 elif [[ $1 == "ipk" ]]; then
 	wget --no-check-certificate https://raw.githubusercontent.com/helmiau/helmiwrt-packages/main/hpipk -O /bin/hpipk
